@@ -52,5 +52,5 @@ fi
 /usr/bin/pipewire-pulse &
 /usr/bin/pipewire-media-session &
 slstatus &
-feh --bg-scale ~/pictures/wallpapers/unknown.png &
+feh --bg-scale ~/pictures/wallpapers/pyongyang.png &
 exec dwm
