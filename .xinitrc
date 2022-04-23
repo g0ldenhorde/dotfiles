@@ -8,15 +8,7 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 # merge in defaults and keymaps
 
 if [ -f $sysresources ]; then
-
-
-
-
-
-
-
     xrdb -merge $sysresources
-
 fi
 
 if [ -f $sysmodmap ]; then
@@ -24,20 +16,16 @@ if [ -f $sysmodmap ]; then
 fi
 
 if [ -f "$userresources" ]; then
-
-
-
-
-
-
-
     xrdb -merge "$userresources"
-
 fi
 
 if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
+
+# change speed and remap stuff
+
+xset r rate 300 50
 
 # start some nice programs
 
@@ -48,9 +36,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-/usr/bin/pipewire &
-/usr/bin/pipewire-pulse &
-/usr/bin/pipewire-media-session &
+feh --bg-scale ~/Media/Pictures/Wallpapers/mountain.png &
 slstatus &
-feh --bg-scale ~/pictures/wallpapers/pyongyang.png &
+sudo mount /dev/sda /home/liam/Media &
 exec dwm
